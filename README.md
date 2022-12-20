@@ -33,7 +33,7 @@ Then, we have the image data with noise as $A = A_2^T$ and can be representd as 
 Finally, we apply truncated SVD and get the recovered image.
 
 <p align="center" width="100%">
-    <img width="30%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
+    <img width="25%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
 </p>
 
 
