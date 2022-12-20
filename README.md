@@ -4,38 +4,31 @@ This repository consists of the final project for Numerical Linear Algebra cours
 ## Description
 We propose the approach to recover the image data (debluring) by utilizing Singular Value Decomposition ([SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)). This approach can aid in the denoising of data and the recovery of the original image. 
 
-First, we utilizing Toeplitz matrix for blurring images. Let $A$ is a $N×N$ matrix, we use the function `scipy.linalg.toeplitz` for creating 2 Toeplitz matrices $P_c$ and $P_r$ which their diagonal have the first maximum value and other values are decreased linearly from the diagonal. Then, we multiply with matrix $A$ as $P_c A P_r^T$. This is the way to blur the image via vertical ($P_c A$ in the columns) and horizontal ($A P_r$ in the rows).
+First, we test blurring an image with symmetric Toeplitz matrices. Let image be an $M\times N$ array. Then we can blur it by matrix-multiplication of the array with Toeplitz matrices from the left (vertical blurring) and the right (horizontal blurring) hand sides:
 
-Second, we add noise to the image as $P_c A P_r^T + E$ ; where $E$ represents the random noise. Let's see the effect of noise for direct solving equation as 
+$$T_1 X T_2 = B.$$
 
-$$ 
-B = P_c A P_r^T + E 
-$$
+At this stage it is easy to deblur the corresponding image since matrices are invertible:
+$$X = T_1^{-1}BT_2^{-1}.$$
 
-Consider $P_c A P_r^T = B$, we can find 
+However, if we add some random unknown small noise to the blurred image:
 
-$$ 
-A_1 = A P_r^T = \text{scipy.linalg.solve}(P_c, B)
-$$
+$$T_1XT_2=B+E,$$
 
-We have $A_1 = A P_r^T$, then we can solve $P_r A^T = A_1$ with 
-
-$$ 
-A_2 = A^T = \text{scipy.linalg.solve}(P_r, A_1^T)
-$$
-
-Then, we have the image data with noise as $A = A_2^T$ and can be representd as the following example images.
+the initial picture will not be correctly restored, because $T_1^{-1}ET_2^{-1}$ can be big. 
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png">
 </p>
 
-As you can see from the above example, we shouldn't deblur the image by solving equation directly since the effect of noise. So, we propose the approach to apply truncated SVD and get the recovered image.
+Image obtained by restoring with SVD-trancated matrices:
 
 <p align="center" width="100%">
     <img width="20%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
 </p>
 
+
+Interestingly enough, our algorithm works even if the blur was not created with Toeplitz matrices (or the blur kernels are unknown). One can use this method to encode information or to recover noisy data to obtain useful information
 
 ## Requirement
 We use `scipy.linalg` as a main library to solve this problem.
