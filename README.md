@@ -1,7 +1,6 @@
 # deblurring-images-using-SVD
 This repository consists of the final project for Numerical Linear Algebra course, Skoltech, 2022
 
-
 ## Description
 We propose the approach to recover the image data (debluring) by utilizing Singular Value Decomposition ([SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)). This approach can aid in the denoising of data and the recovery of the original image. 
 
@@ -25,18 +24,21 @@ $$
 A_2 = A^T = \text{scipy.linalg.solve}(P_r, A_1^T)
 $$
 
-Then, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
-
-![readme_1](https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png)
+Then, we have the image data with noise as $A = A_2^T$ and can be representd as the following example images.
 
 <p align="center" width="100%">
     <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png">
 </p>
 
+Finally, we apply truncated SVD and get the recovered image.
+
+<p align="center" width="100%">
+    <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
+</p>
+
 
 ## Requirements
 We use `scipy.linalg` as a main library to solve this problem.
-
 
 ## How to run the code and repeat experiment
 1. Clone the repository
