@@ -27,9 +27,8 @@ $$
 
 Then, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
 
-$$
 ![readme_1](https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png)
-$$
+
 
 ## Requirements
 We use `scipy.linalg` as a main library to solve this problem.
