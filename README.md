@@ -26,6 +26,7 @@ A_2 = A^T = \text{scipy.linalg.solve}(P_r, A_1^T)
 $$
 
 Then, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
+
 ![original img](https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/peppers.png)
 
 
