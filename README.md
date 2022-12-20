@@ -16,13 +16,13 @@ $$
 Consider $P_c A P_r^T = B$, we can find 
 
 $$ 
-A_1 = A P_r^T = \text{scipy.linalg}(P_c, B)
+A_1 = A P_r^T = \text{scipy.linalg.solve}(P_c, B)
 $$
 
 We have $A_1 = A P_r^T$, then we can solve $P_r A^T = A_1$ with 
 
 $$ 
-A_2 = A^T = \text{scipy.linalg}(P_r, A_1^T)
+A_2 = A^T = \text{scipy.linalg.solve}(P_r, A_1^T)
 $$
 
 Finally, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
