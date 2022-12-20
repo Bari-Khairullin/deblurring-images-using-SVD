@@ -7,7 +7,13 @@ We propose the approach to recover the image data (debluring) by utilizing Singu
 
 First, we utilizing Toeplitz matrix for blurring images. Let $A$ is a $N×N$ matrix, we use the function `scipy.linalg.toeplitz` for creating 2 Toeplitz matrices $P_c$ and $P_r$ which their diagonal values have the maximum value and other values are decreased linearly from the diagonal. Then, we multiply with matrix $A$ as $P_c A P_r^T$. This is the way to blur the image via vertical and horizontal.
 
-Second, we also add noise to the image as $P_c A P_r^T + E$ ; where $E$ represents the random nois and let's see the effect of noise for direct solving equation as $ B = P_c A P_r^T + E $. Consider $P_c A P_r^T = B$, we can find $ A_1 = A P_r^T = $ scipy.linalg($ P_c, B $). We have $A_1 = A P_r^T$, then we can solve $ P_r A^T = A_1 $ with $ A_2 = A^T = $ scipy.linalg($P_r, A_1^T$). Finally, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
+Second, we also add noise to the image as $P_c A P_r^T + E$ ; where $E$ represents the random nois and let's see the effect of noise for direct solving equation as 
+
+$$ 
+B = P_c A P_r^T + E 
+$$
+
+Consider $P_c A P_r^T = B$, we can find $ A_1 = A P_r^T = $ scipy.linalg($ P_c, B $). We have $A_1 = A P_r^T$, then we can solve $ P_r A^T = A_1 $ with $ A_2 = A^T = $ scipy.linalg($P_r, A_1^T$). Finally, we have the image data with noise as $A = A_2^T$ and can be representd as the following images.
 
 
 ## Requirements
