@@ -4,9 +4,9 @@ This repository consists of the final project for Numerical Linear Algebra cours
 ## Description
 We propose the approach to recover the image data (debluring) by utilizing Singular Value Decomposition ([SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)). This approach can aid in the denoising of data and the recovery of the original image. 
 
-First, we utilizing Toeplitz matrix for blurring images. Let $A$ is a $N×N$ matrix, we use the function `scipy.linalg.toeplitz` for creating 2 Toeplitz matrices $P_c$ and $P_r$ which their diagonal have the first maximum value and other values are decreased linearly from the diagonal. Then, we multiply with matrix $A$ as $P_c A P_r^T$. This is the way to blur the image via vertical and horizontal.
+First, we utilizing Toeplitz matrix for blurring images. Let $A$ is a $N×N$ matrix, we use the function `scipy.linalg.toeplitz` for creating 2 Toeplitz matrices $P_c$ and $P_r$ which their diagonal have the first maximum value and other values are decreased linearly from the diagonal. Then, we multiply with matrix $A$ as $P_c A P_r^T$. This is the way to blur the image via vertical ($P_c A$ in the columns) and horizontal ($A P_r$ in the rows).
 
-Second, we also add noise to the image as $P_c A P_r^T + E$ ; where $E$ represents the random nois and let's see the effect of noise for direct solving equation as 
+Second, we add noise to the image as $P_c A P_r^T + E$ ; where $E$ represents the random noise. Let's see the effect of noise for direct solving equation as 
 
 $$ 
 B = P_c A P_r^T + E 
