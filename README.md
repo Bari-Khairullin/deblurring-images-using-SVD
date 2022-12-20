@@ -37,7 +37,7 @@ As you can see from the above example, we shouldn't deblur the image by solving 
 </p>
 
 
-## Requirements
+## Requirement
 We use `scipy.linalg` as a main library to solve this problem.
 
 ## How to run the code and repeat experiment
