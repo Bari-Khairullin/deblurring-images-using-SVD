@@ -6,6 +6,7 @@ We propose the approach to recover the image data (debluring) by utilizing Singu
 
 First, we utilizing Toeplitz matrix for blurring images. Let $A$ is a $N×N$ matrix, we use the function `scipy.linalg.toeplitz` for creating 2 Toeplitz matrices $P_c$ and $P_r$ which their diagonal values have the maximum value and other values are decreased linearly from the diagonal. Then, we multiply with matrix $A$ as $P_c A P_r^T$. This is the way to blur the image via vertical and horizontal.
 
+Second, 
 
 
 ## Requirements
