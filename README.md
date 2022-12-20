@@ -30,7 +30,7 @@ Then, we have the image data with noise as $A = A_2^T$ and can be representd as 
     <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png">
 </p>
 
-As you can see from the above example, we shouldn't deblur the image by solving equation directly since the effect of noise. So, we apply truncated SVD and get the recovered image.
+As you can see from the above example, we shouldn't deblur the image by solving equation directly since the effect of noise. So, we propose the approach to apply truncated SVD and get the recovered image.
 
 <p align="center" width="100%">
     <img width="20%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
