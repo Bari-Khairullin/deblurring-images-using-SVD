@@ -21,14 +21,12 @@ the initial picture will not be correctly restored, because $T_1^{-1}ET_2^{-1}$ 
     <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/readme_1.png">
 </p>
 
-Image obtained by restoring with SVD-trancated matrices:
+So to reduce the error we use pseudoinverse $T^+$, which doesn't contain inverses of small singular values. Image obtained by restoring with SVD-trancated matrices:
 
 <p align="center" width="100%">
     <img width="20%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/recover.png">
 </p>
 
-
-Interestingly enough, our algorithm works even if the blur was not created with Toeplitz matrices (or the blur kernels are unknown). One can use this method to encode information or to recover noisy data to obtain useful information
 
 ## Requirement
 We use `scipy.linalg` as a main library to solve this problem.
