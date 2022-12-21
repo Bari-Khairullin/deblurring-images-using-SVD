@@ -18,13 +18,13 @@ $$T_1XT_2=B+E,$$
 the initial picture will not be correctly restored, because $T_1^{-1}ET_2^{-1}$ can be big. 
 
 <p align="center" width="100%">
-    <img width="70%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/result_1.jpeg">
+    <img width="60%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/result_1.jpeg">
 </p>
 
 So to reduce the error we use pseudoinverse $T^+$, which doesn't contain inverses of small singular values. Image obtained by restoring with SVD-trancated matrices:
 
 <p align="center" width="100%">
-    <img width="20%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/result_2.jpeg">
+    <img width="30%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/result_2.jpeg">
 </p>
 
 
