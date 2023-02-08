@@ -26,7 +26,7 @@ So to reduce the error we use pseudoinverse $T^+$, which doesn't contain inverse
 <p align="center" width="100%">
     <img width="30%" src="https://github.com/Bari-Khairullin/deblurring-images-using-SVD/blob/main/Results/result_2.jpeg">
 </p>
-
+For more details read pdf file attached.
 
 ## Requirement
 We use `scipy.linalg` as a main library to solve this problem.
